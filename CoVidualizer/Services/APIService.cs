@@ -39,9 +39,11 @@ namespace CoVidualizer.Services
 
                     main = JsonConvert.DeserializeObject<Models.COVIDCountryData>(content);
 
+                    Console.WriteLine("Checking reaching end of API");
 
                     return true;
-
+                    
+                    
                 }
 
             }
