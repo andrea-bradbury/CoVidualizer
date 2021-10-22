@@ -3,7 +3,7 @@ A simple 4 page app to view current stats about COVID around the world.
 
 The app uses the About Corona API https://about-corona.net/ to source top line data on COVID-19 around the world. 
 
-Upon open the app collect the current data from https://about-corona.net/ via the API, 
+Upon open the app collects the current data via the API, 
 stores the data as COVIDCountry Objects as uses these attributes to manipluate and display data. 
 
 The app has 4 screens:
