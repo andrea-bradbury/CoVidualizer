@@ -1,8 +1,6 @@
 # CoVidualizer
 A simple 4 page app to view current stats about COVID around the world.
 
-Final Assignment for Mobile Apps Class Semester 2.
-
 The app uses the About Corona API https://about-corona.net/ to source top line data on COVID-19 around the world. 
 
 Upon open the app collect the current data from https://about-corona.net/ via the API, 
