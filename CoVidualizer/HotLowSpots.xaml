@@ -27,7 +27,7 @@
                    
                 </Grid.RowDefinitions>
 
-                <Button x:Name="buttonBack3" FontSize="Body" Text="Back" BorderWidth="1" BorderRadius="10" BorderColor="#FE80B4" HeightRequest="40" TextColor="#FFFFFF" BackgroundColor="#FE80B4" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.ColumnSpan="3" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
+                <Button x:Name="buttonBack3" FontSize="Body" Text="Back" BorderWidth="1" BorderRadius="10" BorderColor="#FDF0D5" HeightRequest="40" TextColor="#331832" BackgroundColor="#FDF0D5" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.ColumnSpan="3" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
 
                 <!--Section Title -->
 

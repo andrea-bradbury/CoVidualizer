@@ -19,6 +19,7 @@ namespace CoVidualizer
         //Instantiate the api service 
         public APIService api = new APIService();
 
+        
 
         public MainPage()
         {
@@ -30,24 +31,28 @@ namespace CoVidualizer
 
             HotLowSpots hotLowSpots = new HotLowSpots();
 
-
+            
             accessAPI();
 
-           
+
         }
 
 
-        public async void accessAPI()
+        public async Task<bool> accessAPI()
         {
             //Display error message if there's no internet, if the API call is wrong or if the URL changes.
 
             if (await api.getCovidData() == false)
             {
                 await DisplayAlert("Error, please check internet connection.", "Also check COVID site is still live", "OK");
+
+                return false;
             }
             else
             {
                 Console.WriteLine("Checking API works");
+
+                return true;
             }
 
         }
@@ -59,10 +64,12 @@ namespace CoVidualizer
                 PreferencesPage preferencesPage = new PreferencesPage();
 
                 await Navigation.PushModalAsync(preferencesPage);
+
+                
             }
             catch
             {
-
+               
             }
         }
 
@@ -73,25 +80,48 @@ namespace CoVidualizer
                 YourLocation yourLocation = new YourLocation();
 
                 await Navigation.PushModalAsync(yourLocation);
+
+                
             }
             catch
             {
-
+               
             }
         }
 
-        async void buttonHViewHotSpotsLowSpots_Clicked(System.Object sender, System.EventArgs e)
+        async void  buttonHViewHotSpotsLowSpots_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
                 HotLowSpots hotLowSpots = new HotLowSpots();
 
                 await Navigation.PushModalAsync(hotLowSpots);
+
+                
             }
             catch
             {
-
+                
             }
         }
+
+
+        async Task<bool> updateMainContent()
+        {
+            try
+            {
+                
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }
+
+        
     }
 }
