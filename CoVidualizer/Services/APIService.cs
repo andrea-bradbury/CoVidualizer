@@ -7,6 +7,8 @@ using System.Collections.Generic;
 
 
 
+
+
 namespace CoVidualizer.Services
 {
     /// This class manages the handling of the API - in this case the Corona API
@@ -21,10 +23,10 @@ namespace CoVidualizer.Services
         string apiKey;
 
         //Instantiate 
-        public Models.COVIDCountryData main = new Models.COVIDCountryData();
+        public Models.Rootobject main = new Models.Rootobject();
 
         //List of Countries
-        public List<Models.COVIDCountryData> listOfCountryData = new List<Models.COVIDCountryData>();
+        public List<Models.Datum> listOfCountryData = new List<Models.Datum>();
 
 
 
@@ -49,25 +51,15 @@ namespace CoVidualizer.Services
                 {
                     string content = await response.Content.ReadAsStringAsync();
 
-                    main = JsonConvert.DeserializeObject<Models.COVIDCountryData>(content);
-                    
+                    //var settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
+
+                    Models.Rootobject allCountries = JsonConvert.DeserializeObject<Models.Rootobject>(content);
+
+                    //content is picking up data but it's not proerly being serialised into country objects
+
+
                     Console.WriteLine("Checking reaching end of API");
 
-
-
-                    for (int i = 0; i < content.Length; i++)
-                    {
-                        if (main.name != null)
-                        {
-                            listOfCountryData.Add(main);
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                            
-
-                    }
 
 
                     return true;
@@ -79,10 +71,6 @@ namespace CoVidualizer.Services
             {
                 return false;
             }
-
-
-
-
 
 
 

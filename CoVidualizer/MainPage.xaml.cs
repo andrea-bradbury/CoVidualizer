@@ -13,8 +13,7 @@ namespace CoVidualizer
 {
     public partial class MainPage : ContentPage
     {
-        //Instantiate the data model
-        COVIDCountryData Model = new COVIDCountryData();
+        
 
         //Instantiate the api service 
         public APIService api = new APIService();

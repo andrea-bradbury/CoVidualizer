@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
-
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Linq;
+
 
 namespace CoVidualizer
 {
     public partial class PreferencesPage : ContentPage
     {
-        
+        //Instantiate the data model
+        public Models.Rootobject root = new Models.Rootobject();
+
 
         public PreferencesPage()
         {
@@ -16,20 +22,21 @@ namespace CoVidualizer
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
 
+            populatePicker();
         }
 
         
 
         void pickerYourLocation_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
+            
+
+            //Models.Datum selectedCountry = pickerYourLocation.SelectedItem.name;
+
+            //Preferences.Set("YourLocation", selectedCountry.name);
 
 
-            //string selectedCountry = pickerYourLocation.SelectedItem;
-
-            //Preferences.Set("YourLocation", );
-            //string countryName = Preferences.Get("YourLocation", "Australia");
-
-            //labelYourLocationSet.Text = countryName;
+            labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
         }
 
         async void buttonBack_Clicked(System.Object sender, System.EventArgs e)
@@ -42,6 +49,20 @@ namespace CoVidualizer
             {
 
             }
+        }
+
+        public void populatePicker()
+        {
+
+
+            //Pulling a list by country names
+
+            List<string> listOfCountries = root.data.Select(data => data.name).ToList();
+
+
+            pickerYourLocation.ItemsSource = listOfCountries;
+
+           
         }
     }
 

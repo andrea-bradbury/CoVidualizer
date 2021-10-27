@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
+
 
 namespace CoVidualizer
 {
@@ -10,6 +11,9 @@ namespace CoVidualizer
         public YourLocation()
         {
             InitializeComponent();
+
+            labelYourLocationTitle2.Text = Preferences.Get("YourLocation", "Australia");
+
         }
 
         async void buttonBack2_Clicked(System.Object sender, System.EventArgs e)
@@ -36,6 +40,15 @@ namespace CoVidualizer
             {
 
             }
+        }
+
+        async void populateCountryData()
+        {
+            string yourLocation = Preferences.Get("YourLocation", "Australia");
+
+            
+
+            
         }
     }
 }
