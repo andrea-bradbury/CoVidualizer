@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 
 
@@ -25,9 +26,10 @@ namespace CoVidualizer.Services
         //Instantiate 
         public Models.Rootobject main = new Models.Rootobject();
 
-        //List of Countries
+        //List of Countries as objects 
         public List<Models.Datum> listOfCountryData = new List<Models.Datum>();
 
+        
 
 
         public async Task<bool> getCovidData()
@@ -51,15 +53,12 @@ namespace CoVidualizer.Services
                 {
                     string content = await response.Content.ReadAsStringAsync();
 
-                    //var settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
-
+                    
                     Models.Rootobject allCountries = JsonConvert.DeserializeObject<Models.Rootobject>(content);
 
-                    //content is picking up data but it's not proerly being serialised into country objects
-
+                   
 
                     Console.WriteLine("Checking reaching end of API");
-
 
 
                     return true;

@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using System.Linq;
 
 
 namespace CoVidualizer
 {
     public partial class HotLowSpots : ContentPage
     {
+        //Instantiate the data model
+        public Models.Rootobject root = new Models.Rootobject();
+
+
+        //List of countries as names
+        List<string> listOfCountries = new List<string>();
+
+
         public HotLowSpots()
         {
             InitializeComponent();
@@ -36,23 +46,38 @@ namespace CoVidualizer
             labelYourLocationTitle2.Text = Preferences.Get("YourLocation", "Australia");
 
 
-            /*
-            for (int i = 0; i< Models.Root.listOfCountryData; i++ )
+            string yourLocation = Preferences.Get("YourLocation", "Australia");
+
+            try
             {
-                if (Models.Datum.name == Preferences.Get("YourLocation", "Australia"))
+                listOfCountries = root.data.Select(data => data.name).ToList();
+
+
+
+                for (int i = 0; i < listOfCountries.Count; i++)
                 {
-                    //labelYLTotalCasesAmount.Text = LatestData.confirmed;
+                    if (yourLocation == root.data[i].name)
+                    {
+                        labelYLTotalCasesAmount.Text = root.data[i].latest_data.confirmed.ToString();
 
-                    //labelYLTodayCasesAmount.Text = Today.confirmed;
+                        labelTodaysCases.Text = root.data[i].today.confirmed.ToString();
 
-                    //labelYLTodayDeathsAmount.Text = Today.deaths;
+                        labelTodaysDeaths.Text = root.data[i].today.deaths.ToString();
 
-                    //labelYLRecoveryRateAmount.Text = Calculated.recovery_rate;
+                        labelRecoveryRate.Text = root.data[i].latest_data.calculated.recovery_rate.ToString();
 
-                    //labelYLDeathRateAmount.Text = Calculated.death_rate;
+                        labelDeathRate.Text = root.data[i].latest_data.calculated.death_rate.ToString();
+
+
+                    }
                 }
+
+                
             }
-            */
+            catch
+            {
+                
+            }
 
 
 
@@ -60,7 +85,43 @@ namespace CoVidualizer
 
         public void populateHotSpotUI()
         {
+            List<Models.Rootobject> listOfHotSpotsObjects = new List<Models.Rootobject>();
 
+            try
+            {
+                //listOfCountries = root.data.Select(data => data.name)Orderby(data.latest_data.calculated.cases_per_million_population).ToList();
+
+
+
+                for (int i = 0; i < listOfCountries.Count ; i++)
+                {
+                    Models.Rootobject rootobject = new Models.Rootobject();
+
+
+                    rootobject.data[i].latest_data.confirmed = root.data[i].latest_data.confirmed;
+
+                    root.data[i].today.confirmed.ToString();
+
+                    root.data[i].today.deaths.ToString();
+
+                    root.data[i].latest_data.calculated.recovery_rate.ToString();
+
+                    root.data[i].latest_data.calculated.death_rate.ToString();
+
+
+
+                    listOfHotSpotsObjects.Add(rootobject);
+
+
+                 
+                }
+
+
+            }
+            catch
+            {
+
+            }
 
 
 

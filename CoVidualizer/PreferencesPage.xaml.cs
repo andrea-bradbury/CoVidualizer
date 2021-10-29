@@ -8,12 +8,18 @@ using Newtonsoft.Json.Linq;
 using System.Linq;
 
 
+
 namespace CoVidualizer
 {
     public partial class PreferencesPage : ContentPage
     {
         //Instantiate the data model
         public Models.Rootobject root = new Models.Rootobject();
+
+        Services.APIService api = new Services.APIService();
+
+        //List of countries as names
+        List<string> listOfCountries = new List<string>();
 
 
         public PreferencesPage()
@@ -22,22 +28,26 @@ namespace CoVidualizer
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
 
-            populatePicker();
+            
         }
 
         
 
         void pickerYourLocation_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
-            
 
-            //Models.Datum selectedCountry = pickerYourLocation.SelectedItem.name;
-
-            //Preferences.Set("YourLocation", selectedCountry.name);
-
+            for (int i =0; i < listOfCountries.Count; i++ )
+            {
+                if (pickerYourLocation.SelectedItem.ToString() == root.data[i].name)
+                {
+                    Preferences.Set("YourLocation", root.data[i].name);
+                }
+            }
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
         }
+
+
 
         async void buttonBack_Clicked(System.Object sender, System.EventArgs e)
         {
@@ -51,16 +61,28 @@ namespace CoVidualizer
             }
         }
 
-        public void populatePicker()
+
+
+
+        public async Task<bool> populatePicker()
         {
+            try
+            {
+                //Pulling a list by country names
+
+                listOfCountries = root.data.Select(data => data.name).ToList();
 
 
-            //Pulling a list by country names
+                pickerYourLocation.ItemsSource = listOfCountries;
 
-            List<string> listOfCountries = root.data.Select(data => data.name).ToList();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
-
-            pickerYourLocation.ItemsSource = listOfCountries;
+            
 
            
         }

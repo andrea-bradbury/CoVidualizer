@@ -27,12 +27,12 @@
                 
                 <Button x:Name="buttonBack" FontSize="Body" Text="Back" BorderWidth="1" BorderRadius="10" BorderColor="#FE80B4" HeightRequest="40" TextColor="#FFFFFF" BackgroundColor="#FE80B4" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonBack_Clicked"  />
 
-                <Label x:Name="labelYourLocationTitle" FontSize="Title" Text="Your Location" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1"/>
+                <Label x:Name="labelYourLocationTitle" FontSize="Title" Text="Your Location" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="3" Grid.Row="1"/>
 
-                <Label x:Name="labelYourLocationSet" FontSize="Medium" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3"/>
+                <Label x:Name="labelYourLocationSet" FontSize="Medium" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="3" Grid.Row="3"/>
 
 
-                <Picker x:Name="pickerYourLocation" Title="Choose a location"  FontSize="Medium" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="4" SelectedIndexChanged="pickerYourLocation_SelectedIndexChanged"/>
+                <Picker x:Name="pickerYourLocation" Title="Choose a location"  FontSize="Medium" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="3" Grid.Row="4" SelectedIndexChanged="pickerYourLocation_SelectedIndexChanged"/>
                 
                 
 

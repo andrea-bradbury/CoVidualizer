@@ -24,6 +24,8 @@ namespace CoVidualizer
         {
             InitializeComponent();
 
+            accessAPI();
+
             PreferencesPage preferencesPage = new PreferencesPage();
 
             YourLocation yourLocation = new YourLocation();
@@ -31,7 +33,7 @@ namespace CoVidualizer
             HotLowSpots hotLowSpots = new HotLowSpots();
 
             
-            accessAPI();
+            
 
 
         }
@@ -64,11 +66,14 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(preferencesPage);
 
-                
+                await preferencesPage.populatePicker();
+
             }
             catch
             {
                
+
+
             }
         }
 
@@ -80,11 +85,12 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(yourLocation);
 
-                
+                yourLocation.populateCountryData();
             }
             catch
             {
-               
+                await DisplayAlert("Try selecting your location on the preferences page.", "", "OK");
+
             }
         }
 
@@ -115,6 +121,7 @@ namespace CoVidualizer
             }
             catch
             {
+                
                 return false;
             }
 
