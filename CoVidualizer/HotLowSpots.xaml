@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CoVidualizer.HotLowSpots">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Frame>
+        <StackLayout Orientation="Vertical" BackgroundColor="#fefaff" >
+            <Frame BackgroundColor="#f5daf0">
                 <Grid Margin="1,30,1,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -27,39 +27,39 @@
                    
                 </Grid.RowDefinitions>
 
-                <Button x:Name="buttonBack3" FontSize="Body" Text="Back" BorderWidth="1" BorderRadius="10" BorderColor="#FDF0D5" HeightRequest="40" TextColor="#331832" BackgroundColor="#FDF0D5" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.ColumnSpan="3" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
+                <Button x:Name="buttonBack3" FontSize="Body" Text="Back to Home" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Grid.ColumnSpan="2" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
 
                 <!--Section Title -->
 
-                <Label x:Name="labelYourLocationTitle2" FontSize="Title" Text="Your Location" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="1"/>
+                <Label x:Name="labelYourLocationTitle2" FontSize="Title" Text="Your Location" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="1"/>
                 
 
                 <!--Column Titles -->
 
-                <Label x:Name="labelCountry" FontSize="Medium" Text="Country" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="0" />
+                <Label x:Name="labelCountry" FontSize="Medium" Text="Country" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="0" />
 
-                <Label x:Name="labelTodaysCases" FontSize="Medium" Text="Today's Cases" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="1" />
+                <Label x:Name="labelTodaysCases" FontSize="Medium" Text="Today's Cases" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="1" />
 
-                <Label x:Name="labelTodaysDeaths" FontSize="Medium" Text="Today's Deaths" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="2" />
+                <Label x:Name="labelTodaysDeaths" FontSize="Medium" Text="Today's Deaths" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="2" />
 
-                <Label x:Name="labelRecoveryRate" FontSize="Medium" Text="Recovery Rate" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="3" />
+                <Label x:Name="labelRecoveryRate" FontSize="Medium" Text="Recovery Rate" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="3" />
 
-                <Label x:Name="labelDeathRate" FontSize="Medium" Text="Death Rate" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="4" />
+                <Label x:Name="labelDeathRate" FontSize="Medium" Text="Death Rate" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="4" />
 
 
                 
                 <!--Your Location Data -->
-                <Label x:Name="labelYLTotalCasesAmount" FontSize="Body" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="0" />
-                <Label x:Name="labelYLTodayCasesAmount" FontSize="Body" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="1" />
-                <Label x:Name="labelYLTodayDeathsAmount" FontSize="Body" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="2" />
-                <Label x:Name="labelYLRecoveryRateAmount" FontSize="Body" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="3" />
-                <Label x:Name="labelYLDeathRateAmount" FontSize="Body" Text="X" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="4" />
+                <Label x:Name="labelYLCountryName" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="0" />
+                <Label x:Name="labelYLTodayCasesAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="1" />
+                <Label x:Name="labelYLTodayDeathsAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="2" />
+                <Label x:Name="labelYLRecoveryRateAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="3" />
+                <Label x:Name="labelYLDeathRateAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="4" />
 
 
              </Grid>
             </Frame>
 
-            <Frame>
+            <Frame BackgroundColor="#f5daf0">
                 <Grid Margin="1,10,1,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -77,13 +77,13 @@
 
                 <!--Section Title -->
 
-                <Label x:Name="labelHotSpotTitle" FontSize="Title" Text="Hot Spots" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="0"/>
+                <Label x:Name="labelHotSpotTitle" FontSize="Title" Text="Hot Spots" TextColor="#bf085a" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="0"/>
                 
 
 
                 <!--Hot Spot Data -->
 
-                <ListView x:Name="listViewHotSpot">
+                <ListView x:Name="listViewHotSpot" HeightRequest="60" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
 
@@ -97,7 +97,7 @@
                 </Grid>
             </Frame>
 
-            <Frame>
+            <Frame BackgroundColor="#f5daf0">
                 <Grid Margin="1,10,1,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -111,12 +111,12 @@
 
                 <!--Section Title -->
 
-                <Label x:Name="labelLowSpotTitle" FontSize="Title" Text="Low Spots" TextColor="#202b11" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="0"/>
+                <Label x:Name="labelLowSpotTitle" FontSize="Title" Text="Low Spots" TextColor="#0661c2" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="5" Grid.Row="0"/>
 
 
                 <!--Low Spot Data -->
 
-                <ListView x:Name="listViewLowSpot">
+                <ListView x:Name="listViewLowSpot" HeightRequest="60" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
 

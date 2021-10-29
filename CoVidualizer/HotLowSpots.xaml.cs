@@ -41,7 +41,7 @@ namespace CoVidualizer
 
 
         //Filling based on the preference "YourLocation". The default is Australia
-        public void populateYourLocationUI()
+        public async Task<bool> populateYourLocationUI()
         {
             labelYourLocationTitle2.Text = Preferences.Get("YourLocation", "Australia");
 
@@ -58,37 +58,38 @@ namespace CoVidualizer
                 {
                     if (yourLocation == root.data[i].name)
                     {
-                        labelYLTotalCasesAmount.Text = root.data[i].latest_data.confirmed.ToString();
+                        labelYLCountryName.Text = root.data[i].name.ToString();
 
-                        labelTodaysCases.Text = root.data[i].today.confirmed.ToString();
+                        labelYLTodayCasesAmount.Text = root.data[i].today.confirmed.ToString();
 
-                        labelTodaysDeaths.Text = root.data[i].today.deaths.ToString();
+                        labelYLTodayDeathsAmount.Text = root.data[i].today.deaths.ToString();
 
-                        labelRecoveryRate.Text = root.data[i].latest_data.calculated.recovery_rate.ToString();
+                        labelYLRecoveryRateAmount.Text = root.data[i].latest_data.calculated.recovery_rate.ToString();
 
-                        labelDeathRate.Text = root.data[i].latest_data.calculated.death_rate.ToString();
+                        labelYLDeathRateAmount.Text = root.data[i].latest_data.calculated.death_rate.ToString();
 
 
                     }
                 }
 
-                
+                return true;
             }
             catch
             {
-                
+                return false;
             }
 
 
 
         }
 
-        public void populateHotSpotUI()
+        public async Task<bool> populateHotSpotUI()
         {
             List<Models.Rootobject> listOfHotSpotsObjects = new List<Models.Rootobject>();
 
             try
             {
+                //Need to do pull descending order
                 //listOfCountries = root.data.Select(data => data.name)Orderby(data.latest_data.calculated.cases_per_million_population).ToList();
 
 
@@ -97,16 +98,17 @@ namespace CoVidualizer
                 {
                     Models.Rootobject rootobject = new Models.Rootobject();
 
+                    
 
                     rootobject.data[i].latest_data.confirmed = root.data[i].latest_data.confirmed;
 
-                    root.data[i].today.confirmed.ToString();
+                    rootobject.data[i].today.confirmed = root.data[i].today.confirmed;
 
-                    root.data[i].today.deaths.ToString();
+                    rootobject.data[i].today.deaths = root.data[i].today.deaths;
 
-                    root.data[i].latest_data.calculated.recovery_rate.ToString();
+                    rootobject.data[i].latest_data.calculated.recovery_rate = root.data[i].latest_data.calculated.recovery_rate;
 
-                    root.data[i].latest_data.calculated.death_rate.ToString();
+                    rootobject.data[i].latest_data.calculated.death_rate = root.data[i].latest_data.calculated.death_rate;
 
 
 
@@ -117,19 +119,64 @@ namespace CoVidualizer
                 }
 
 
+                listViewHotSpot.ItemsSource = listOfHotSpotsObjects;
+
+
+                return true;
+
             }
             catch
             {
-
+                return false;
             }
 
 
 
         }
 
-        public void populateLowSpotsUI()
+        public async Task<bool> populateLowSpotsUI()
         {
+            List<Models.Rootobject> listOfLowSpotsObjects = new List<Models.Rootobject>();
 
+            try
+            {
+                //Need to do pull ascending order and exclude zero or null values 
+                //listOfCountries = root.data.Select(data => data.name)Orderby(data.latest_data.calculated.cases_per_million_population).ToList();
+
+
+
+                for (int i = 0; i < listOfCountries.Count; i++)
+                {
+                    Models.Rootobject rootobject = new Models.Rootobject();
+
+
+                    rootobject.data[i].latest_data.confirmed = root.data[i].latest_data.confirmed;
+
+                    rootobject.data[i].today.confirmed = root.data[i].today.confirmed;
+
+                    rootobject.data[i].today.deaths = root.data[i].today.deaths;
+
+                    rootobject.data[i].latest_data.calculated.recovery_rate = root.data[i].latest_data.calculated.recovery_rate;
+
+                    rootobject.data[i].latest_data.calculated.death_rate = root.data[i].latest_data.calculated.death_rate;
+
+
+
+                    listOfLowSpotsObjects.Add(rootobject);
+
+
+
+                }
+
+                listViewLowSpot.ItemsSource = listOfLowSpotsObjects;
+
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
 
 
         }

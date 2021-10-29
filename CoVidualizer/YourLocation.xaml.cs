@@ -46,6 +46,10 @@ namespace CoVidualizer
                 HotLowSpots hotLowSpots = new HotLowSpots();
 
                 await Navigation.PushModalAsync(hotLowSpots);
+
+                await hotLowSpots.populateYourLocationUI();
+
+                await hotLowSpots.populateLowSpotsUI();
             }
             catch
             {
@@ -53,7 +57,7 @@ namespace CoVidualizer
             }
         }
 
-        public bool populateCountryData()
+        public async Task<bool> populateCountryData()
         {
             string yourLocation = Preferences.Get("YourLocation", "Australia");
 

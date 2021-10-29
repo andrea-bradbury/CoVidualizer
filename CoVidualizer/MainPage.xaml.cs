@@ -24,7 +24,7 @@ namespace CoVidualizer
         {
             InitializeComponent();
 
-            accessAPI();
+            //accessAPI();
 
             PreferencesPage preferencesPage = new PreferencesPage();
 
@@ -85,7 +85,7 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(yourLocation);
 
-                yourLocation.populateCountryData();
+                await yourLocation.populateCountryData();
             }
             catch
             {
@@ -102,7 +102,10 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(hotLowSpots);
 
-                
+                await hotLowSpots.populateYourLocationUI();
+
+                await hotLowSpots.populateLowSpotsUI();
+
             }
             catch
             {
