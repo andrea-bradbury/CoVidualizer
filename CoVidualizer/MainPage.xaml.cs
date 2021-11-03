@@ -28,11 +28,6 @@ namespace CoVidualizer
             accessAPI();
 
 
-            //Set up mainpage data
-            getWorldData();
-
-            
-
         }
 
 
@@ -40,7 +35,7 @@ namespace CoVidualizer
         {
             //Display error message if there's no internet, if the API call is wrong or if the URL changes.
 
-            if (await api.getCovidData() == false)
+            if (await api.getAllCOVIDData() == false)
             {
                 await DisplayAlert("Error, please check internet connection.", "Also check COVID site is still live", "OK");
 
@@ -50,10 +45,14 @@ namespace CoVidualizer
             {
                 Console.WriteLine("Checking API works");
 
+                //Set up mainpage data
+                getWorldData();
+
                 return true;
             }
-
         }
+
+        
 
 
 
@@ -63,17 +62,30 @@ namespace CoVidualizer
             {
                 Calculations calculations = new Calculations();
 
-                await calculations.getWorldCases();
 
-                //labelWorldCasesAmount.Text = calculations.getWorldCases().totalWorldCases.ToString();
+                List<int> listOfWorldCases = await api.getWorldCases();
 
-                await calculations.getWorldRecoveries();
+                int totalWorldCases = await calculations.getWorldCases(listOfWorldCases);
 
-                //labelWorldRecoveriesAmount.Text = calculations.getWorldRecoveries().totalWorldRecoveries.ToString();
+                labelWorldCasesAmount.Text = totalWorldCases.ToString();
 
-                await calculations.getWorldDeaths();
 
-                //labelWorldCasesAmount.Text = calculations.getWorldDeaths().totalWorldDeaths.ToString();
+
+                List<int> listOfWorldRecoveries = await api.getWorldRecoveries();
+
+                int totalWorldRecoveries = await calculations.getWorldRecoveries(listOfWorldRecoveries);
+
+                labelWorldRecoveriesAmount.Text = totalWorldRecoveries.ToString();
+
+
+
+                List<int> listOfWorldDeaths = await api.getWorldDeaths();
+
+                int totalWorldDeaths = await calculations.getWorldDeaths(listOfWorldDeaths);
+
+                labelWorldDeathsAmount.Text = totalWorldDeaths.ToString();
+
+
 
                 return true;
             }
@@ -95,7 +107,10 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(preferencesPage);
 
-                await preferencesPage.populatePicker();
+
+                List<string> listOfCountryNames = await api.getCOVIDCountries();
+
+                await preferencesPage.populatePicker(listOfCountryNames);
 
             }
             catch
@@ -114,7 +129,12 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(yourLocation);
 
-                await yourLocation.populateCountryData();
+
+
+                string yourLocationData[] = await api.getYourLocation();
+
+
+                await yourLocation.populateCountryData(yourLocationData);
             }
             catch
             {

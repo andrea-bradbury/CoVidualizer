@@ -83,7 +83,7 @@ namespace CoVidualizer
             try
             {
                 //Need to do pull descending order
-                //listOfCountries = root.data.Select(data => data.name)Orderby(data.latest_data.calculated.cases_per_million_population).ToList();
+                //listOfCountries = root.data.Orderby(data => data.latest_data.calculated.cases_per_million_population)Select(data => data.name).ToList();
 
 
 

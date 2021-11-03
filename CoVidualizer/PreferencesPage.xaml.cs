@@ -8,25 +8,18 @@ using Newtonsoft.Json.Linq;
 using System.Linq;
 
 
-
 namespace CoVidualizer
 {
     public partial class PreferencesPage : ContentPage
     {
-        //Instantiate the data model
-        public Models.Rootobject root = new Models.Rootobject();
-
-        Services.APIService api = new Services.APIService();
-
-        //List of countries as names
-        List<string> listOfCountries = new List<string>();
-
+        
 
         public PreferencesPage()
         {
             InitializeComponent();
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
+
 
             
         }
@@ -35,16 +28,16 @@ namespace CoVidualizer
 
         void pickerYourLocation_SelectedIndexChanged(System.Object sender, System.EventArgs e)
         {
-
-            for (int i =0; i < listOfCountries.Count; i++ )
-            {
-                if (pickerYourLocation.SelectedItem.ToString() == root.data[i].name)
-                {
-                    Preferences.Set("YourLocation", root.data[i].name);
-                }
-            }
+            
+            Preferences.Set("YourLocation", pickerYourLocation.SelectedItem.ToString());
+           
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
+
+            DisplayAlert("Your location has been changed.", "", "OK");
+
+
+
         }
 
 
@@ -64,16 +57,12 @@ namespace CoVidualizer
 
 
 
-        public async Task<bool> populatePicker()
+        public async Task<bool> populatePicker(List<string> listOfCountryNames)
         {
             try
             {
-                //Pulling a list by country names
-
-                listOfCountries = root.data.Select(data => data.name).ToList();
-
-
-                pickerYourLocation.ItemsSource = listOfCountries;
+                
+                pickerYourLocation.ItemsSource = listOfCountryNames;
 
                 return true;
             }

@@ -17,37 +17,27 @@ namespace CoVidualizer.Models
     public class Calculations
     {
         
-        //Instantiate the data model
-        public Models.Rootobject root = new Models.Rootobject();
 
-
-        public async Task<bool> getWorldCases()
+        public async Task<int> getWorldCases(List<int> listOfWorldCases)
         {
-
-            //List of cases from each country
-            List<int> listOfTotalCases = new List<int>();
-
 
             int totalWorldCases = 0;
 
             try
             {
-                listOfTotalCases = root.data.Select(data => data.latest_data.confirmed).ToList();
-
-
-
-                for (int i = 0; i < listOfTotalCases.Count; i++)
+                
+                for (int i = 0; i < listOfWorldCases.Count; i++)
                 {
-                    totalWorldCases += listOfTotalCases[i];
+                    totalWorldCases += listOfWorldCases[i];
                 }
 
 
-                return true;
+                return totalWorldCases;
 
             }
             catch
             {
-                return false;
+                return totalWorldCases;
             }
 
 
@@ -55,32 +45,26 @@ namespace CoVidualizer.Models
 
 
 
-        public async Task<bool> getWorldRecoveries()
+        public async Task<int> getWorldRecoveries(List<int> listOfWorldRecoveries)
         {
-            //List of recoveries from each country
-            List<int> listOfTotalRecoveries = new List<int>();
-
-
+            
             int totalWorldRecoveries = 0;
 
             try
             {
-                listOfTotalRecoveries = root.data.Select(data => data.latest_data.recovered).ToList();
 
-
-
-                for (int i = 0; i < listOfTotalRecoveries.Count; i++)
+                for (int i = 0; i < listOfWorldRecoveries.Count; i++)
                 {
-                    totalWorldRecoveries += listOfTotalRecoveries[i];
+                    totalWorldRecoveries += listOfWorldRecoveries[i];
                 }
 
 
-                return true;
+                return totalWorldRecoveries;
 
             }
             catch
             {
-                return false;
+                return totalWorldRecoveries;
             }
 
         }
@@ -88,33 +72,28 @@ namespace CoVidualizer.Models
 
 
 
-        public async Task<bool> getWorldDeaths()
+        public async Task<int> getWorldDeaths(List<int> listOfWorldDeaths)
         {
 
-            //List of deaths from each country
-            List<int> listOfTotalDeaths = new List<int>();
 
 
             int totalWorldDeaths = 0;
 
             try
             {
-                listOfTotalDeaths = root.data.Select(data => data.latest_data.deaths).ToList();
 
-
-
-                for (int i = 0; i < listOfTotalDeaths.Count; i++)
+                for (int i = 0; i < listOfWorldDeaths.Count; i++)
                 {
-                    totalWorldDeaths += listOfTotalDeaths[i];
+                    totalWorldDeaths += listOfWorldDeaths[i];
                 }
 
 
-                return true;
+                return totalWorldDeaths;
 
             }
             catch
             {
-                return false;
+                return totalWorldDeaths;
             }
 
 
