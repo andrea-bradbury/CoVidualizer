@@ -41,7 +41,7 @@
                 <Label x:Name="labelTotalDeathsAmount" FontSize="Body" Text="X" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="4" Grid.Column="1" />
 
                 <Label x:Name="labelTodaysCases" FontSize="Medium" Text="Today's Cases" TextColor="#c76b98" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="0" />
-                <Label x:Name="labelTodaysCasessAmount" FontSize="Body" Text="X" TextColor="#c76b98" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="0" />
+                <Label x:Name="labelTodaysCasesAmount" FontSize="Body" Text="X" TextColor="#c76b98" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="0" />
 
                 <Label x:Name="labelTodaysDeaths" FontSize="Medium" Text="Today's Deaths" TextColor="#c76b98" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="1" />
                 <Label x:Name="labelTodaysDeathsAmount" FontSize="Body" Text="X" TextColor="#c76b98" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="6" Grid.Column="1" />

@@ -10,12 +10,7 @@ namespace CoVidualizer
 {
     public partial class HotLowSpots : ContentPage
     {
-        //Instantiate the data model
-        public Models.Rootobject root = new Models.Rootobject();
-
-
-        //List of countries 
-        List<string> listOfCountries = new List<string>();
+        
 
 
         public HotLowSpots()
@@ -47,7 +42,7 @@ namespace CoVidualizer
 
 
             string yourLocation = Preferences.Get("YourLocation", "Australia");
-
+            /*
             try
             {
                 listOfCountries = root.data.Select(data => data.name).ToList();
@@ -72,14 +67,16 @@ namespace CoVidualizer
                 return false;
             }
 
+            */
 
+            return true;
 
         }
 
         public async Task<bool> populateHotSpotUI()
         {
             List<Models.Rootobject> listOfHotSpotsObjects = new List<Models.Rootobject>();
-
+            /*
             try
             {
                 //Need to do pull descending order
@@ -113,7 +110,8 @@ namespace CoVidualizer
             {
                 return false;
             }
-
+            */
+            return true;
 
 
         }
@@ -122,6 +120,7 @@ namespace CoVidualizer
         {
             List<Models.Rootobject> listOfLowSpotsObjects = new List<Models.Rootobject>();
 
+            /*
             try
             {
                 //Need to do pull ascending order and exclude zero or null values 
@@ -162,7 +161,9 @@ namespace CoVidualizer
                 return false;
             }
 
+            */
 
+            return true;
         }
     }
 }

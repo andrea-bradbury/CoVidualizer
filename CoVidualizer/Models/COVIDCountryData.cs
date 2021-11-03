@@ -6,8 +6,8 @@ using System.Collections.Generic;
 
 namespace CoVidualizer.Models
 {
-    ///Manages the modelling of the COVID data into clusters for each country. Each Country is an object
-    ///
+    ///Manages the data received from the API
+    
     public class Rootobject
     {
         public Datum[] data { get; set; }

@@ -53,11 +53,21 @@ namespace CoVidualizer
             }
         }
 
-        public async Task<bool> populateCountryData(List<string> yourLocation)
+        public async Task<bool> populateCountryData(Models.Country yourLocationData)
         {
 
 
-            labelTotalCasesAmount.Text = yourLocation[]
+            labelTotalCasesAmount.Text = yourLocationData.totalConfirmed.ToString();
+
+            labelTotalDeathsAmount.Text = yourLocationData.totalDeaths.ToString();
+
+            labelTodaysCasesAmount.Text = yourLocationData.todaysConfirmed.ToString();
+
+            labelTodaysDeathsAmount.Text = yourLocationData.todaysDeaths.ToString();
+
+            labelRecoveryRateAmount.Text = yourLocationData.recovery_rate.ToString();
+
+            labelDeathRateAmount.Text = yourLocationData.death_rate.ToString();
 
             return true;
         }

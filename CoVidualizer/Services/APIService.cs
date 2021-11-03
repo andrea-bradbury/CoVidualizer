@@ -24,8 +24,10 @@ namespace CoVidualizer.Services
         //No API key is required for this API 
         string apiKey;
 
-        //Instantiate 
+        //Instantiate API modelling
         public Models.Rootobject allCountries;
+
+        public Models.Country country;
 
 
         //List of countries as names
@@ -39,6 +41,15 @@ namespace CoVidualizer.Services
 
         //List of your locations data as a list
         List<string> listOfYourLocationData = new List<string>();
+
+        //List of your location cases per million
+        List<int> listOfYourLocationCPM = new List<int>();
+
+        //List of Hot Spots
+        List<Models.Country> listOfHotSpots = new List<Models.Country>();
+
+        //List of Low Spots
+        List<Models.Country> listOfLowSpots = new List<Models.Country>();
 
 
 
@@ -161,30 +172,63 @@ namespace CoVidualizer.Services
 
         }
 
-        public async Task<string[]> getYourLocation()
+        
+
+
+
+        public async Task<Models.Country> getYourLocationData()
         {
             string yourLocation = Preferences.Get("YourLocation", "Australia");
 
-            string[] arrayOfCountryData; 
             try
             {
-                //Pull country matching preference name
+                string yourLocationName = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.name).First();
 
-                List<string> listOfCountryData = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.ToString()).ToList();
+                int yourLocationCases  = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.latest_data.confirmed).First();
 
-                for (int i =0; i < listOfCountryData.Count; i++)
-                {
-                    //arrayOfCountryData.Add(i);
-                }
+                int yourLocationDeaths = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.latest_data.deaths).First();
+
+                int yourLocationRecovered = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.latest_data.recovered).First();
+
+                int yourLocationTodayCases = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.today.confirmed).First();
+
+                int yourLocationTodayDeath = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.today.deaths).First();
+
+                float? yourLocationRecoveryRate = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.latest_data.calculated.recovery_rate).First();
+
+                float? yourLocationDeathRate = allCountries.data.Where(data => data.name == yourLocation).Select(data => data.latest_data.calculated.death_rate).First();
 
 
-                return arrayOfCountryData;
+                Models.Country yourLocationCountry = new Models.Country(yourLocationName, yourLocationCases, yourLocationDeaths, yourLocationRecovered, yourLocationTodayCases, yourLocationTodayDeath, yourLocationRecoveryRate, yourLocationDeathRate);
+
+
+                return yourLocationCountry;
             }
             catch
             {
-                return arrayOfCountryData;
+                Models.Country nullObject = new Models.Country("empty", 0, 0, 0, 0, 0, 0, 0);
+
+                return nullObject;
             }
 
+        }
+
+        public async Task<List<Models.Country>> getHotSpots()
+        {
+            try
+            {
+                //Pulling a list by cases per million
+
+
+                //listOfHotSpots = allCountries.data.Select(data => data.latest_data.calculated.cases_per_million_population).ToList();
+
+
+                return listOfHotSpots;
+            }
+            catch
+            {
+                return listOfHotSpots;
+            }
         }
     }
 }

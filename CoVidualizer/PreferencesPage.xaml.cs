@@ -34,6 +34,8 @@ namespace CoVidualizer
 
             labelYourLocationSet.Text = Preferences.Get("YourLocation", "Australia");
 
+            
+
             DisplayAlert("Your location has been changed.", "", "OK");
 
 

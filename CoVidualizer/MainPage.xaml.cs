@@ -131,10 +131,12 @@ namespace CoVidualizer
 
 
 
-                string yourLocationData[] = await api.getYourLocation();
+                Country yourLocationObject = await api.getYourLocationData();
 
 
-                await yourLocation.populateCountryData(yourLocationData);
+                await yourLocation.populateCountryData(yourLocationObject);
+
+                
             }
             catch
             {
@@ -150,6 +152,14 @@ namespace CoVidualizer
                 HotLowSpots hotLowSpots = new HotLowSpots();
 
                 await Navigation.PushModalAsync(hotLowSpots);
+
+
+
+                List<Country> listOfHotSpots = await api.getHotSpots();
+
+                
+
+
 
                 await hotLowSpots.populateYourLocationUI();
 
