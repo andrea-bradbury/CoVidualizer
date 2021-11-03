@@ -20,7 +20,7 @@
                 <!--Top -->
 
                 <Label x:Name="labelCoVidualizerTitle" FontSize="Title" Text="CoVidualizer" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="0"/>
-                <Button x:Name="buttonSetPreference" FontSize="Body" Text="Set your location" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonSetPreference_Clicked" />
+                <Button x:Name="buttonSetPreference" FontSize="Body" Text="SET A LOCATION" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonSetPreference_Clicked" />
 
 
              </Grid>
@@ -51,7 +51,7 @@
                 <Label x:Name="labelWorldRecoveriesAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="0" Grid.Row="5"/>
                
                 <Label x:Name="labelWorldDeathsTitle" FontSize="Medium" Text="World Deaths" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1"  Grid.Row="4"/>
-                <Label x:Name="labelWorldDeathssAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="1" Grid.Row="5"/>
+                <Label x:Name="labelWorldDeathsAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="1" Grid.Row="5"/>
                
 
 
@@ -74,8 +74,8 @@
                 </Grid.RowDefinitions>
 
 
-                <Button x:Name="buttonViewLocation" FontSize="Body" Text="View your location" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonViewLocation_Clicked"  />
-                <Button x:Name="buttonHViewHotSpotsLowSpots" FontSize="Body" Text="View hot spots and low spots" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonHViewHotSpotsLowSpots_Clicked" />
+                <Button x:Name="buttonViewLocation" FontSize="Body" Text="VIEW YOUR LOCATION DATA" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonViewLocation_Clicked"  />
+                <Button x:Name="buttonHViewHotSpotsLowSpots" FontSize="Body" Text="VIEW HOT AND LOW SPOTS" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonHViewHotSpotsLowSpots_Clicked" />
 
 
             </Grid>

@@ -24,17 +24,14 @@ namespace CoVidualizer
         {
             InitializeComponent();
 
-            //accessAPI();
+            //Collect data from API
+            accessAPI();
 
-            PreferencesPage preferencesPage = new PreferencesPage();
 
-            YourLocation yourLocation = new YourLocation();
-
-            HotLowSpots hotLowSpots = new HotLowSpots();
+            //Set up mainpage data
+            getWorldData();
 
             
-            
-
 
         }
 
@@ -57,6 +54,38 @@ namespace CoVidualizer
             }
 
         }
+
+
+
+        public async Task<bool> getWorldData()
+        {
+            try
+            {
+                Calculations calculations = new Calculations();
+
+                await calculations.getWorldCases();
+
+                //labelWorldCasesAmount.Text = calculations.getWorldCases().totalWorldCases.ToString();
+
+                await calculations.getWorldRecoveries();
+
+                //labelWorldRecoveriesAmount.Text = calculations.getWorldRecoveries().totalWorldRecoveries.ToString();
+
+                await calculations.getWorldDeaths();
+
+                //labelWorldCasesAmount.Text = calculations.getWorldDeaths().totalWorldDeaths.ToString();
+
+                return true;
+            }
+            catch
+            {
+                await DisplayAlert("World data not available at this time", "", "OK");
+
+                return false;
+            }
+        }
+
+
 
         async void buttonSetPreference_Clicked(System.Object sender, System.EventArgs e)
         {
@@ -114,22 +143,6 @@ namespace CoVidualizer
         }
 
 
-        async Task<bool> updateMainContent()
-        {
-            try
-            {
-                
-
-                return true;
-            }
-            catch
-            {
-                
-                return false;
-            }
-
-
-        }
 
         
     }

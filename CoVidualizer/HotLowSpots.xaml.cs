@@ -14,7 +14,7 @@ namespace CoVidualizer
         public Models.Rootobject root = new Models.Rootobject();
 
 
-        //List of countries as names
+        //List of countries 
         List<string> listOfCountries = new List<string>();
 
 
@@ -57,14 +57,7 @@ namespace CoVidualizer
                 for (int i = 0; i < listOfCountries.Count; i++)
                 {
                     if (yourLocation == root.data[i].name)
-                    {
-                        labelYLCountryName.Text = root.data[i].name.ToString();
-
-                        labelYLTodayCasesAmount.Text = root.data[i].today.confirmed.ToString();
-
-                        labelYLTodayDeathsAmount.Text = root.data[i].today.deaths.ToString();
-
-                        labelYLRecoveryRateAmount.Text = root.data[i].latest_data.calculated.recovery_rate.ToString();
+                    { 
 
                         labelYLDeathRateAmount.Text = root.data[i].latest_data.calculated.death_rate.ToString();
 
@@ -98,22 +91,13 @@ namespace CoVidualizer
                 {
                     Models.Rootobject rootobject = new Models.Rootobject();
 
-                    
-
-                    rootobject.data[i].latest_data.confirmed = root.data[i].latest_data.confirmed;
-
-                    rootobject.data[i].today.confirmed = root.data[i].today.confirmed;
-
-                    rootobject.data[i].today.deaths = root.data[i].today.deaths;
-
-                    rootobject.data[i].latest_data.calculated.recovery_rate = root.data[i].latest_data.calculated.recovery_rate;
-
+                   
+                    rootobject.data[i].name = root.data[i].name;
                     rootobject.data[i].latest_data.calculated.death_rate = root.data[i].latest_data.calculated.death_rate;
 
 
 
                     listOfHotSpotsObjects.Add(rootobject);
-
 
                  
                 }
@@ -147,22 +131,22 @@ namespace CoVidualizer
 
                 for (int i = 0; i < listOfCountries.Count; i++)
                 {
-                    Models.Rootobject rootobject = new Models.Rootobject();
+
+                    if ( root.data[i].latest_data.calculated.death_rate != 0)
+                    {
+                        Models.Rootobject rootobject = new Models.Rootobject();
 
 
-                    rootobject.data[i].latest_data.confirmed = root.data[i].latest_data.confirmed;
+                        rootobject.data[i].name = root.data[i].name;
+                        rootobject.data[i].latest_data.calculated.death_rate = root.data[i].latest_data.calculated.death_rate;
 
-                    rootobject.data[i].today.confirmed = root.data[i].today.confirmed;
-
-                    rootobject.data[i].today.deaths = root.data[i].today.deaths;
-
-                    rootobject.data[i].latest_data.calculated.recovery_rate = root.data[i].latest_data.calculated.recovery_rate;
-
-                    rootobject.data[i].latest_data.calculated.death_rate = root.data[i].latest_data.calculated.death_rate;
-
-
-
-                    listOfLowSpotsObjects.Add(rootobject);
+                        listOfLowSpotsObjects.Add(rootobject);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    
 
 
 

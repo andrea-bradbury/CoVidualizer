@@ -18,10 +18,10 @@ namespace CoVidualizer
 
         public YourLocation()
         {
+            
             InitializeComponent();
 
             labelYourLocationTitle2.Text = Preferences.Get("YourLocation", "Australia");
-
 
             
 
