@@ -11,9 +11,10 @@ namespace CoVidualizer.Models
         public int todaysDeaths { get; set; }
         public float? death_rate { get; set; }
         public float? recovery_rate { get; set; }
-        
+        public int cases_per_million_population { get; set; }
 
-        public Country(string Name, int TotalConfirmed, int TotalDeaths, int TotalRecovered, int TodaysConfirmed,  int TodaysDeaths, float? DeathRate, float? RecoveryRate)
+
+        public Country(string Name, int TotalConfirmed, int TotalDeaths, int TotalRecovered, int TodaysConfirmed,  int TodaysDeaths, float? DeathRate, float? RecoveryRate, int CasesPM)
         {
             name = Name;
 
@@ -30,6 +31,8 @@ namespace CoVidualizer.Models
             death_rate = DeathRate;
 
             recovery_rate = RecoveryRate;
+
+            cases_per_million_population = CasesPM;
 
         }
 

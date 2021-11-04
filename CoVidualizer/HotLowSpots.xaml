@@ -27,12 +27,12 @@
 
                  <!--Column Titles -->
                 <Label x:Name="labelYourLocation" FontSize="Title" Text="Country" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1"/>
-                <Label x:Name="labelDeathRate" FontSize="Title" Text="Cases per million people" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" />
+                <Label x:Name="labelCasesPerMillion" FontSize="Title" Text="Cases per million people" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" />
 
 
                  <!--Your Location Data -->
                 <Label x:Name="labelYourLocationTitle2" FontSize="Body" Text="Your Location" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="2"/>
-                <Label x:Name="labelYLDeathRateAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="1" />
+                <Label x:Name="labelYLCasesPerMillionAmount" FontSize="Body" Text="X" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="1" />
 
 
              </Grid>

@@ -43,9 +43,10 @@ namespace CoVidualizer
 
                 await Navigation.PushModalAsync(hotLowSpots);
 
-                await hotLowSpots.populateYourLocationUI();
 
-                await hotLowSpots.populateLowSpotsUI();
+                //Need to add in populate Hot Spot Low Spot Page data 
+
+
             }
             catch
             {

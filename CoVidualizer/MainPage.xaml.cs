@@ -154,16 +154,30 @@ namespace CoVidualizer
                 await Navigation.PushModalAsync(hotLowSpots);
 
 
+                //Get Your country data
 
-                List<Country> listOfHotSpots = await api.getHotSpots();
+                Country yourlocation = await api.getYourLocationData();
 
-                
+                await hotLowSpots.populateYourLocationUI(yourlocation);
 
 
 
-                await hotLowSpots.populateYourLocationUI();
+                //Get top 3 hotspots data based on cases per million population
 
-                await hotLowSpots.populateLowSpotsUI();
+                //List<Country> listOfHotSpots = await api.getHotSpots();
+
+                //await hotLowSpots.populateHotSpotUI(listOfHotSpots);
+
+
+
+
+                //Get lowest 3 spots data based on cases per million population
+
+
+                //List<Country> listOfLowSpots = await api.getLowSpots();
+
+                //await hotLowSpots.populateLowSpotsUI(listOfLowSpots);
+
 
             }
             catch
