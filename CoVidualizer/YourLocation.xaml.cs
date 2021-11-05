@@ -103,7 +103,9 @@ namespace CoVidualizer
 
                 if (yourLocationData.death_rate != 0)
                 {
-                    labelRecoveryRateAmount.Text = $" {yourLocationData.death_rate.ToString()}%";
+                    decimal recoveryRate = (decimal)yourLocationData.death_rate;
+
+                    labelRecoveryRateAmount.Text = $" {Math.Round(recoveryRate,2).ToString()}%";
                 }
                 else
                 {
@@ -113,7 +115,8 @@ namespace CoVidualizer
 
                 if (yourLocationData.recovery_rate != 0)
                 {
-                    labelDeathRateAmount.Text = $" {yourLocationData.recovery_rate.ToString()}%";
+                    decimal deathRate = (decimal)yourLocationData.recovery_rate;
+                    labelDeathRateAmount.Text = $" {Math.Round(deathRate, 2).ToString()}%";
                 }
                 else
                 {
