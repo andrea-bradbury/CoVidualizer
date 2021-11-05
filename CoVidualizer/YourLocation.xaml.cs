@@ -56,21 +56,82 @@ namespace CoVidualizer
 
         public async Task<bool> populateCountryData(Models.Country yourLocationData)
         {
+            try
+            {
+                //Assume that if there's zero then data has not been entered for that day yet
+
+                if (yourLocationData.totalConfirmed != 0)
+                {
+                    labelTotalCasesAmount.Text = yourLocationData.totalConfirmed.ToString();
+                }
+                else
+                {
+                    labelTotalCasesAmount.Text = "No data yet today";
+                }
 
 
-            labelTotalCasesAmount.Text = yourLocationData.totalConfirmed.ToString();
+                if (yourLocationData.totalDeaths != 0)
+                {
+                    labelTotalDeathsAmount.Text = yourLocationData.totalDeaths.ToString();
+                }
+                else
+                {
+                    labelTotalDeathsAmount.Text = "No data yet today";
+                }
 
-            labelTotalDeathsAmount.Text = yourLocationData.totalDeaths.ToString();
 
-            labelTodaysCasesAmount.Text = yourLocationData.todaysConfirmed.ToString();
+                if (yourLocationData.todaysConfirmed != 0)
+                {
+                    labelTodaysCasesAmount.Text = yourLocationData.todaysConfirmed.ToString();
+                }
+                else
+                {
+                    labelTodaysCasesAmount.Text = "No data yet today";
+                }
 
-            labelTodaysDeathsAmount.Text = yourLocationData.todaysDeaths.ToString();
 
-            labelRecoveryRateAmount.Text = yourLocationData.recovery_rate.ToString();
 
-            labelDeathRateAmount.Text = yourLocationData.death_rate.ToString();
+                if (yourLocationData.todaysDeaths != 0)
+                {
+                    labelTodaysDeathsAmount.Text = yourLocationData.todaysDeaths.ToString();
+                }
+                else
+                {
+                    labelTodaysDeathsAmount.Text = "No data yet today";
+                }
 
-            return true;
+
+                if (yourLocationData.death_rate != 0)
+                {
+                    labelRecoveryRateAmount.Text = $" {yourLocationData.death_rate.ToString()}%";
+                }
+                else
+                {
+                    labelRecoveryRateAmount.Text = "No data yet today";
+                }
+
+
+                if (yourLocationData.recovery_rate != 0)
+                {
+                    labelDeathRateAmount.Text = $" {yourLocationData.recovery_rate.ToString()}%";
+                }
+                else
+                {
+                    labelDeathRateAmount.Text = "No data yet today";
+                }
+
+
+
+                return true;
+            }
+            catch
+            {
+                await DisplayAlert("An issue has arisen with the data for this country", " ", "OK");
+
+                return false; 
+            }
+
+            
         }
     }
 }
