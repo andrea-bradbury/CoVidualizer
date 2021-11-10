@@ -9,30 +9,22 @@
                 <Grid Margin="1,30,1,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    
-                    
-                  
+               
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                   
-                    
-                    
-                    
-                   
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Button x:Name="buttonBack3" FontSize="Body" Text="Back to Home" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Grid.Column="0" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
 
-                 <!--Column Titles -->
-                <Label x:Name="labelYourLocation" FontSize="Title" Text="Country" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1"/>
-                <Label x:Name="labelCasesPerMillion" FontSize="Title" Text="Cases per million people" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" />
+                <Button x:Name="buttonBack3" FontSize="Body" Text="Back to Home" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="Start"  Grid.Column="0" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
 
+                
 
                  <!--Your Location Data -->
-                <Label x:Name="labelYourLocationTitle2" FontSize="Body" Text="Your Location" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="2"/>
-                <Label x:Name="labelYLCasesPerMillionAmount" FontSize="Body" Text="" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="2" Grid.Column="1" />
+                <Label x:Name="labelYourLocationTitle2" FontSize="Large" Text="Your Location" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1"/>
+                <Label x:Name="labelYLCasesPerMillionAmount" FontSize="Large" Text="" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0"  Grid.Row="2"  />
 
 
              </Grid>
@@ -58,12 +50,8 @@
 
                 <!--Hot Spot Data -->
 
-                <ListView x:Name="listViewHotSpot" HeightRequest="60" Grid.Column="2" Grid.Row="1" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ListView x:Name="listViewHotSpot" HeightRequest="60" Grid.ColumnSpan="2" Grid.Row="1" >
+                    
                 </ListView>
 
 
@@ -92,12 +80,14 @@
 
                 <!--Low Spot Data -->
 
-                <ListView x:Name="listViewLowSpot" HeightRequest="60" Grid.Column="2" Grid.Row="1"  >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ListView x:Name="listViewLowSpot" HeightRequest="60" Grid.ColumnSpan="2" Grid.Row="1"  >
+                   <ListView.ItemsSource>
+                      <x:Array Type="{x:Type x:String}">
+                        <x:String>Entry 1</x:String>
+                        <x:String>Entry 2</x:String>
+                        <x:String>Entry 3</x:String>
+                      </x:Array>
+                  </ListView.ItemsSource>
                 </ListView>
 
 

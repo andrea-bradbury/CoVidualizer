@@ -25,7 +25,7 @@ namespace CoVidualizer
             InitializeComponent();
 
             //Collect data from API
-            accessAPI();
+            Task T = accessAPI();
 
 
         }
@@ -164,9 +164,9 @@ namespace CoVidualizer
 
                 //Get top 3 hotspots data based on cases per million population
 
-                //List<Country> listOfHotSpots = await api.getHotSpots();
+                List<Country> listOfHotSpots = await api.getHotSpots();
 
-                //await hotLowSpots.populateHotSpotUI(listOfHotSpots);
+                await hotLowSpots.populateHotSpotUI(listOfHotSpots);
 
 
 
@@ -174,9 +174,9 @@ namespace CoVidualizer
                 //Get lowest 3 spots data based on cases per million population
 
 
-                //List<Country> listOfLowSpots = await api.getLowSpots();
+                List<Country> listOfLowSpots = await api.getLowSpots();
 
-                //await hotLowSpots.populateLowSpotsUI(listOfLowSpots);
+                await hotLowSpots.populateLowSpotsUI(listOfLowSpots);
 
 
             }

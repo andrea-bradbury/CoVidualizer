@@ -32,7 +32,7 @@
 
                 <Button x:Name="buttonBack2" FontSize="Body" Text="Back" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonBack2_Clicked" />
 
-                <Label x:Name="labelYourLocationTitle2" FontSize="Title" Text="Your Location XXX" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <Label x:Name="labelYourLocationTitle2" FontSize="Title" Text="Your Location" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="2" Grid.Row="1"/>
 
                 <Label x:Name="labelTotalCases" FontSize="Medium" Text="Total Cases" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="3" Grid.Column="0" />
                 <Label x:Name="labelTotalCasesAmount" FontSize="Body" Text="" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="4" Grid.Column="0" />

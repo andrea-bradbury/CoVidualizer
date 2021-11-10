@@ -41,7 +41,7 @@ namespace CoVidualizer
 
             labelYourLocationTitle2.Text = yourLocation.name;
 
-            labelYLCasesPerMillionAmount.Text = yourLocation.cases_per_million_population.ToString("#,##0");
+            labelYLCasesPerMillionAmount.Text = $" {yourLocation.cases_per_million_population.ToString("#,##0")} cases per million";
 
             return true;
 
@@ -51,7 +51,23 @@ namespace CoVidualizer
         {
             try
             {
-                listViewHotSpot.ItemsSource = listOfHotSpots;
+                List<string> listForListView = new List<string>();
+
+                for (int i = 0; i <listOfHotSpots.Count; i++)
+                {
+                    string  countryName = listOfHotSpots[i].name;
+
+                    string countryCPM = listOfHotSpots[i].cases_per_million_population.ToString("#,##0");
+
+                    string fullCountry = $" {countryName}  |  {countryCPM} cases per million";
+
+                    listForListView.Add(fullCountry);
+                }
+
+                
+                listViewHotSpot.ItemsSource = listForListView;
+
+                
 
                 return true;
             }
@@ -66,6 +82,7 @@ namespace CoVidualizer
 
         public async Task<bool> populateLowSpotsUI(List<Models.Country> listOfLowSpots)
         {
+
             List<Models.Country> threeLowSpots = new List<Models.Country>();
 
             try
@@ -76,7 +93,20 @@ namespace CoVidualizer
                 }
 
 
-                listViewLowSpot.ItemsSource = threeLowSpots;
+                List<string> listForListView = new List<string>();
+
+                for (int i = 0; i < threeLowSpots.Count; i++)
+                {
+                    string countryName = threeLowSpots[i].name;
+
+                    string countryCPM = threeLowSpots[i].cases_per_million_population.ToString("#,##0");
+
+                    string fullCountry = $" {countryName}  |  {countryCPM} cases per million";
+
+                    listForListView.Add(fullCountry);
+                }
+
+                listViewLowSpot.ItemsSource = listForListView;
 
                 return true;
             }
