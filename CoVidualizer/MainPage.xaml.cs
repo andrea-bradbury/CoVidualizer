@@ -67,7 +67,7 @@ namespace CoVidualizer
 
                 int totalWorldCases = await calculations.getWorldCases(listOfWorldCases);
 
-                labelWorldCasesAmount.Text = totalWorldCases.ToString();
+                labelWorldCasesAmount.Text = totalWorldCases.ToString("#,##0");
 
 
 
@@ -75,7 +75,7 @@ namespace CoVidualizer
 
                 int totalWorldRecoveries = await calculations.getWorldRecoveries(listOfWorldRecoveries);
 
-                labelWorldRecoveriesAmount.Text = totalWorldRecoveries.ToString();
+                labelWorldRecoveriesAmount.Text = totalWorldRecoveries.ToString("#,##0");
 
 
 
@@ -83,7 +83,7 @@ namespace CoVidualizer
 
                 int totalWorldDeaths = await calculations.getWorldDeaths(listOfWorldDeaths);
 
-                labelWorldDeathsAmount.Text = totalWorldDeaths.ToString();
+                labelWorldDeathsAmount.Text = totalWorldDeaths.ToString("#,##0");
 
 
 

@@ -19,9 +19,23 @@
     <None Remove="Services\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Models\" />
+    <None Remove="img\CovidDeathsIcon.png" />
+    <None Remove="img\RecoveredIcon.png" />
+    <None Remove="img\DeathRateIcon.png" />
+    <None Remove="img\WorldMapIcon.png" />
+    <None Remove="img\CovidIcon.png" />
+    <None Remove="img\HouseIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="**/*" />
+    <Content Include="img\CovidIcon.png" />
+    <Content Include="img\DeathRateIcon.png" />
+    <Content Include="img\HouseIcon.png" />
+    <Content Include="img\RecoveredIcon.png" />
+    <Content Include="img\WorldMapIcon.png" />
   </ItemGroup>
 </Project>

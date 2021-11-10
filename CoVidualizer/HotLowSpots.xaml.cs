@@ -39,9 +39,9 @@ namespace CoVidualizer
         public async Task<bool> populateYourLocationUI(Models.Country yourLocation)
         {
 
-            labelYourLocationTitle2.Text = yourLocation.name.ToString();
+            labelYourLocationTitle2.Text = yourLocation.name;
 
-            labelYLCasesPerMillionAmount.Text = yourLocation.cases_per_million_population.ToString();
+            labelYLCasesPerMillionAmount.Text = yourLocation.cases_per_million_population.ToString("#,##0");
 
             return true;
 

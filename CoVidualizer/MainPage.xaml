@@ -40,17 +40,20 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    
                    
                 </Grid.RowDefinitions>
 
-
-                <Label x:Name="labelWorldCasesTitle" FontSize="Title" Text="Total World Cases To Date" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <Image Source="WorldMapIcon.png" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
+                <Label x:Name="labelWorldCasesTitle" FontSize="Title" Text="Total World Cases To Date" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.ColumnSpan="2" Grid.Row="1"/>
                 <Label x:Name="labelWorldCasesAmount" FontSize="Body" Text="" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.ColumnSpan="2"  Grid.Row="2"/>
 
-                <Label x:Name="labelWorldRecoveriesTitle" FontSize="Medium" Text="Total World Recoveries" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0"  Grid.Row="4"/>
+                <Image Source="RecoveredIcon.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
+                <Label x:Name="labelWorldRecoveriesTitle" FontSize="Medium" Text="Total World Recoveries" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0"  Grid.Row="4"/>
                 <Label x:Name="labelWorldRecoveriesAmount" FontSize="Body" Text="" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="0" Grid.Row="5"/>
-               
-                <Label x:Name="labelWorldDeathsTitle" FontSize="Medium" Text="Total World Deaths" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1"  Grid.Row="4"/>
+
+                <Image Source="DeathRateIcon.png" Grid.Row="3" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
+                <Label x:Name="labelWorldDeathsTitle" FontSize="Medium" Text="Total World Deaths" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"   Grid.Row="4"/>
                 <Label x:Name="labelWorldDeathsAmount" FontSize="Body" Text="" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Column="1" Grid.Row="5"/>
                
 

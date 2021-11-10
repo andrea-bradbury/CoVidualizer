@@ -62,7 +62,7 @@ namespace CoVidualizer
 
                 if (yourLocationData.totalConfirmed != 0)
                 {
-                    labelTotalCasesAmount.Text = yourLocationData.totalConfirmed.ToString();
+                    labelTotalCasesAmount.Text = yourLocationData.totalConfirmed.ToString("#,##0");
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace CoVidualizer
 
                 if (yourLocationData.totalDeaths != 0)
                 {
-                    labelTotalDeathsAmount.Text = yourLocationData.totalDeaths.ToString();
+                    labelTotalDeathsAmount.Text = yourLocationData.totalDeaths.ToString("#,##0");
                 }
                 else
                 {
@@ -82,7 +82,7 @@ namespace CoVidualizer
 
                 if (yourLocationData.todaysConfirmed != 0)
                 {
-                    labelTodaysCasesAmount.Text = yourLocationData.todaysConfirmed.ToString();
+                    labelTodaysCasesAmount.Text = yourLocationData.todaysConfirmed.ToString("#,##0");
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace CoVidualizer
 
                 if (yourLocationData.todaysDeaths != 0)
                 {
-                    labelTodaysDeathsAmount.Text = yourLocationData.todaysDeaths.ToString();
+                    labelTodaysDeathsAmount.Text = yourLocationData.todaysDeaths.ToString("#,##0");
                 }
                 else
                 {

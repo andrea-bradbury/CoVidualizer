@@ -26,7 +26,7 @@
                 <Button x:Name="buttonBack3" FontSize="Body" Text="Back to Home" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  Grid.Column="0" Grid.Row="0" Clicked="buttonBack3_Clicked"  />
 
                  <!--Column Titles -->
-                <Label x:Name="labelYourLocation" FontSize="Title" Text="Country" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1"/>
+                <Label x:Name="labelYourLocation" FontSize="Title" Text="Country" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1"/>
                 <Label x:Name="labelCasesPerMillion" FontSize="Title" Text="Cases per million people" TextColor="#632b6c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="1" />
 
 
