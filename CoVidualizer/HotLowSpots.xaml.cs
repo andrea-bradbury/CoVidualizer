@@ -41,7 +41,17 @@ namespace CoVidualizer
 
             labelYourLocationTitle2.Text = yourLocation.name;
 
-            labelYLCasesPerMillionAmount.Text = $" {yourLocation.cases_per_million_population.ToString("#,##0")} cases per million";
+            //Assume that if 0 cases per million then there must not be data recorded at this time
+
+            if (yourLocation.cases_per_million_population <=0 )
+            {
+                labelYLCasesPerMillionAmount.Text = "No data provided at this time";
+            }
+            else
+            {
+                labelYLCasesPerMillionAmount.Text = $" {yourLocation.cases_per_million_population.ToString("#,##0")} cases per million";
+
+            }
 
             return true;
 
@@ -51,6 +61,15 @@ namespace CoVidualizer
         {
             try
             {
+                //Create vertical stack
+
+
+                //Set up horizontal stack for data
+
+
+                //For each object in the list create the horizontal stack and add to main vertical stack
+
+
                 List<string> listForListView = new List<string>();
 
                 for (int i = 0; i <listOfHotSpots.Count; i++)
