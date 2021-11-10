@@ -61,32 +61,38 @@ namespace CoVidualizer
         {
             try
             {
-                //Create vertical stack
-
-
-                //Set up horizontal stack for data
-
-
-                //For each object in the list create the horizontal stack and add to main vertical stack
-
-
-                List<string> listForListView = new List<string>();
-
-                for (int i = 0; i <listOfHotSpots.Count; i++)
+                foreach (Models.Country country in listOfHotSpots)
                 {
-                    string  countryName = listOfHotSpots[i].name;
+                    //Create vertical stack
+                    StackLayout stack = new StackLayout()
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                    };
 
-                    string countryCPM = listOfHotSpots[i].cases_per_million_population.ToString("#,##0");
 
-                    string fullCountry = $" {countryName}  |  {countryCPM} cases per million";
+                    //Set up horizontal stack for data
 
-                    listForListView.Add(fullCountry);
+                    Label labelHotCountry = new Label()
+                    {
+                        Text = $"{country.name}",
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                    };
+                    stack.Children.Add(labelHotCountry);
+
+                    Label labelHotCountryCPM = new Label()
+                    {
+                        Text = $"{country.cases_per_million_population}",
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                    };
+                    stack.Children.Add(labelHotCountryCPM);
+
+                    //For each object in the list create the horizontal stack and add to main vertical stack
+                    stackViewHotSpot.Children.Add(stack);
+
                 }
 
                 
-                listViewHotSpot.ItemsSource = listForListView;
 
-                
 
                 return true;
             }
@@ -112,20 +118,35 @@ namespace CoVidualizer
                 }
 
 
-                List<string> listForListView = new List<string>();
-
-                for (int i = 0; i < threeLowSpots.Count; i++)
+                foreach (Models.Country country in threeLowSpots)
                 {
-                    string countryName = threeLowSpots[i].name;
+                    //Create vertical stack
+                    StackLayout stack = new StackLayout()
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                    };
 
-                    string countryCPM = threeLowSpots[i].cases_per_million_population.ToString("#,##0");
 
-                    string fullCountry = $" {countryName}  |  {countryCPM} cases per million";
+                    //Set up horizontal stack for data
 
-                    listForListView.Add(fullCountry);
+                    Label labelLowCountry = new Label()
+                    {
+                        Text = $"{country.name}",
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                    };
+                    stack.Children.Add(labelLowCountry);
+
+                    Label labelLowCountryCPM = new Label()
+                    {
+                        Text = $"{country.cases_per_million_population}",
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                    };
+                    stack.Children.Add(labelLowCountryCPM);
+
+
+                    //For each object in the list create the horizontal stack and add to main vertical stack
+                    stackViewLowSpot.Children.Add(stack);
                 }
-
-                listViewLowSpot.ItemsSource = listForListView;
 
                 return true;
             }
