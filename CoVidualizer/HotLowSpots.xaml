@@ -50,8 +50,7 @@
 
                 <!--Hot Spot Data -->
 
-                <StackLayout x:Name="stackViewHotSpot" HeightRequest="100" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" >
-                  
+                <StackLayout x:Name="stackViewHotSpot" HeightRequest="100" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Vertical" >
                 </StackLayout>
 
 
@@ -80,8 +79,7 @@
 
                 <!--Low Spot Data -->
 
-                <StackLayout x:Name="stackViewLowSpot" HeightRequest="100" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" >
-                  
+                <StackLayout x:Name="stackViewLowSpot" HeightRequest="100" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Vertical" >
                 </StackLayout>
 
 

@@ -70,19 +70,21 @@ namespace CoVidualizer
                     };
 
 
-                    //Set up horizontal stack for data
+                    //Set up smaller stack for data
 
                     Label labelHotCountry = new Label()
                     {
                         Text = $"{country.name}",
                         HorizontalOptions = LayoutOptions.EndAndExpand,
+                        TextColor = Color.DarkRed,
                     };
                     stack.Children.Add(labelHotCountry);
 
                     Label labelHotCountryCPM = new Label()
                     {
-                        Text = $"{country.cases_per_million_population}",
+                        Text = $"{country.cases_per_million_population.ToString("#,##0")} cases per million",
                         HorizontalOptions = LayoutOptions.EndAndExpand,
+                        TextColor = Color.DarkRed,
                     };
                     stack.Children.Add(labelHotCountryCPM);
 
@@ -127,19 +129,21 @@ namespace CoVidualizer
                     };
 
 
-                    //Set up horizontal stack for data
+                    //Set up smaller stack for data
 
                     Label labelLowCountry = new Label()
                     {
                         Text = $"{country.name}",
                         HorizontalOptions = LayoutOptions.EndAndExpand,
+                        TextColor = Color.DarkBlue,
                     };
                     stack.Children.Add(labelLowCountry);
 
                     Label labelLowCountryCPM = new Label()
                     {
-                        Text = $"{country.cases_per_million_population}",
+                        Text = $"{country.cases_per_million_population.ToString("#,##0")} case per million",
                         HorizontalOptions = LayoutOptions.EndAndExpand,
+                        TextColor = Color.DarkBlue,
                     };
                     stack.Children.Add(labelLowCountryCPM);
 
