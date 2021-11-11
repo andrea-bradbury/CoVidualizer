@@ -52,8 +52,6 @@
                 <Label x:Name="labelDeathRate" FontSize="Medium" Text="Death Rate" TextColor="#f09f9c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="7" Grid.Column="1" />
                 <Label x:Name="labelDeathRateAmount" FontSize="Body" Text="" TextColor="#f09f9c" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="8" Grid.Column="1" />
 
-                <Button x:Name="buttonSeeWorldHotSpots" FontSize="Body" Text="World Hot Spots + Low Spots" BorderWidth="1"  BorderRadius="10" BorderColor="#632b6c" TextColor="#fcc3a3" BackgroundColor="#270f36"  HeightRequest="40"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.ColumnSpan="2" Grid.Row="9" Clicked="buttonSeeWorldHotSpots_Clicked" />
-
 
             </Grid>
         </Frame>

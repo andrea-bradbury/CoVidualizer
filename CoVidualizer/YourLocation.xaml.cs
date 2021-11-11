@@ -35,24 +35,7 @@ namespace CoVidualizer
             }
         }
 
-        async void buttonSeeWorldHotSpots_Clicked(System.Object sender, System.EventArgs e)
-        {
-            try
-            {
-                HotLowSpots hotLowSpots = new HotLowSpots();
-
-                await Navigation.PushModalAsync(hotLowSpots);
-
-
-                //Need to add in populate Hot Spot Low Spot Page data 
-
-
-            }
-            catch
-            {
-
-            }
-        }
+      
 
         public async Task<bool> populateCountryData(Models.Country yourLocationData)
         {

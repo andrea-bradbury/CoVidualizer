@@ -59,9 +59,16 @@ namespace CoVidualizer
 
         public async Task<bool> populateHotSpotUI(List<Models.Country> listOfHotSpots)
         {
+            List<Models.Country> listHotCountries = new List<Models.Country>();
+
             try
             {
-                foreach (Models.Country country in listOfHotSpots)
+                for (int i = 0; i < 3; i++)
+                {
+                    listHotCountries.Add(listOfHotSpots[i]);
+                }
+
+                foreach (Models.Country country in listHotCountries)
                 {
                     //Create vertical stack
                     StackLayout stack = new StackLayout()
