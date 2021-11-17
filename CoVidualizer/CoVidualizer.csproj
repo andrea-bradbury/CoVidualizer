@@ -22,7 +22,6 @@
     <None Remove="img\CovidDeathsIcon.png" />
     <None Remove="img\RecoveredIcon.png" />
     <None Remove="img\DeathRateIcon.png" />
-    <None Remove="img\WorldMapIcon.png" />
     <None Remove="img\CovidIcon.png" />
     <None Remove="img\HouseIcon.png" />
   </ItemGroup>
@@ -36,6 +35,10 @@
     <Content Include="img\DeathRateIcon.png" />
     <Content Include="img\HouseIcon.png" />
     <Content Include="img\RecoveredIcon.png" />
-    <Content Include="img\WorldMapIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="img\WorldMapIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
