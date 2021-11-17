@@ -28,14 +28,13 @@ namespace CoVidualizer
             }
             catch
             {
-
+                await DisplayAlert("Oops there was an issue.", "", "OK");
             }
         }
 
         
-
-
         //Filling based on the preference "YourLocation". The default is Australia
+
         public async Task<bool> populateYourLocationUI(Models.Country yourLocation)
         {
 
@@ -56,6 +55,8 @@ namespace CoVidualizer
             return true;
 
         }
+
+        //Filling the top three countries based on cases per million.
 
         public async Task<bool> populateHotSpotUI(List<Models.Country> listOfHotSpots)
         {
@@ -102,17 +103,16 @@ namespace CoVidualizer
 
                 
 
-
                 return true;
             }
             catch
             {
                 return false;
             }
-            
-
-
+           
         }
+
+        //Filling the bottom three countries based on cases per million.
 
         public async Task<bool> populateLowSpotsUI(List<Models.Country> listOfLowSpots)
         {

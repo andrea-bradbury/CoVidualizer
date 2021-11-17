@@ -19,7 +19,6 @@ namespace CoVidualizer
 
             labelYourLocationTitle2.Text = Preferences.Get("YourLocation", "Australia");
 
-            
 
         }
 
@@ -31,11 +30,12 @@ namespace CoVidualizer
             }
             catch
             {
-
+                await DisplayAlert("Oops, try clicking 'done'.", "", "OK");
             }
         }
 
       
+        //Setting up your location data screen based on your country preference. Default is Australia
 
         public async Task<bool> populateCountryData(Models.Country yourLocationData)
         {

@@ -18,6 +18,7 @@ namespace CoVidualizer
         //Instantiate the api service 
         public APIService api = new APIService();
 
+
         
 
         public MainPage()
@@ -27,7 +28,7 @@ namespace CoVidualizer
             //Collect data from API
             Task T = accessAPI();
 
-
+            
         }
 
 
@@ -55,6 +56,7 @@ namespace CoVidualizer
         
 
 
+        //Calculates the main page data
 
         public async Task<bool> getWorldData()
         {
@@ -108,6 +110,7 @@ namespace CoVidualizer
                 await Navigation.PushModalAsync(preferencesPage);
 
 
+                //Populating the picker for 'set your location'
                 List<string> listOfCountryNames = await api.getCOVIDCountries();
 
                 await preferencesPage.populatePicker(listOfCountryNames);
@@ -115,11 +118,10 @@ namespace CoVidualizer
             }
             catch
             {
-               
-
-
+                await DisplayAlert("Oops there was an issue collecting the countries", "Check your internet connection", "OK");
             }
         }
+
 
         async void buttonViewLocation_Clicked(System.Object sender, System.EventArgs e)
         {
@@ -130,6 +132,7 @@ namespace CoVidualizer
                 await Navigation.PushModalAsync(yourLocation);
 
 
+                //Using your preference country, populate this data for 'your location'. If no preference is set it will defult to Australia
 
                 Country yourLocationObject = await api.getYourLocationData();
 
@@ -147,6 +150,8 @@ namespace CoVidualizer
 
         async void  buttonHViewHotSpotsLowSpots_Clicked(System.Object sender, System.EventArgs e)
         {
+
+
             try
             {
                 HotLowSpots hotLowSpots = new HotLowSpots();
@@ -182,11 +187,9 @@ namespace CoVidualizer
             }
             catch
             {
-                
+                await DisplayAlert("Oops there was an error.", "Try checking your internet connection", "OK");
             }
         }
-
-
 
         
     }

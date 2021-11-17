@@ -1,6 +1,8 @@
 ﻿using System;
 namespace CoVidualizer.Models
 {
+    //This class is used for populating for the Hot Spot Low Spot pages
+
     public class Country
     {
         public string name { get; set; }

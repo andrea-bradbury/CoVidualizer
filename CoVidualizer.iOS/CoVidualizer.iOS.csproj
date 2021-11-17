@@ -136,4 +136,12 @@
       <Name>CoVidualizer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\WorldMapIcon.imageset\" />
+    <Folder Include="Assets.xcassets\RecoveredIcon.imageset\" />
+    <Folder Include="Assets.xcassets\HouseIcon.imageset\" />
+    <Folder Include="Assets.xcassets\CovidIcon.imageset\" />
+    <Folder Include="Assets.xcassets\CovidDeathIcon.imageset\" />
+    <Folder Include="Assets.xcassets\DeathRateIcon.imageset\" />
+  </ItemGroup>
 </Project>
