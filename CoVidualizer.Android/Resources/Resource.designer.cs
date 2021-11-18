@@ -11803,9 +11803,6 @@ namespace CoVidualizer.Droid
 			// aapt resource value: 0x7F070094
 			public const int tooltip_frame_light = 2131165332;
 			
-			// aapt resource value: 0x7F070095
-			public const int WorldMapIcon = 2131165333;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

@@ -20,14 +20,14 @@
                 <!--Top -->
 
                 <Label x:Name="labelCoVidualizerTitle" FontSize="Title" Text="CoVidualizer" TextColor="#270f36" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="0"/>
-                <Button x:Name="buttonSetPreference" FontSize="Body" Text="SET A LOCATION" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonSetPreference_Clicked" />
+                <Button x:Name="buttonSetPreference" FontSize="Body" Text="SET A LOCATION" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" Padding="30,20,30,20" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonSetPreference_Clicked" />
 
 
              </Grid>
         </Frame>
 
         <Frame BackgroundColor="#f5daf0">
-            <Grid Margin="1,1,1,1" >
+            <Grid Margin="1,1,1,1" HeightRequest="300"  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -77,8 +77,8 @@
                 </Grid.RowDefinitions>
 
 
-                <Button x:Name="buttonViewLocation" FontSize="Body" Text="VIEW YOUR LOCATION DATA" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonViewLocation_Clicked"  />
-                <Button x:Name="buttonHViewHotSpotsLowSpots" FontSize="Body" Text="VIEW HOT AND LOW SPOTS" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonHViewHotSpotsLowSpots_Clicked" />
+                <Button x:Name="buttonViewLocation" FontSize="Body" Text="VIEW YOUR LOCATION DATA" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40" Padding="30,20,30,20" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Clicked="buttonViewLocation_Clicked"  />
+                <Button x:Name="buttonHViewHotSpotsLowSpots" FontSize="Body" Text="VIEW HOT AND LOW SPOTS" BorderWidth="1" BorderRadius="10" BorderColor="#632b6c" HeightRequest="40"  Padding="30,20,30,20" TextColor="#fcc3a3" BackgroundColor="#270f36" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Clicked="buttonHViewHotSpotsLowSpots_Clicked" />
 
 
             </Grid>
